@@ -1,3 +1,5 @@
+
+export function slideFunction() {
 // Slide button
 let next = document.querySelector('.next')
 let prev = document.querySelector('.prev')
@@ -14,3 +16,5 @@ prev.addEventListener('click', function(){
     document.querySelector('.slide').prepend(items[items.length - 1]) 
     
 })
+
+}

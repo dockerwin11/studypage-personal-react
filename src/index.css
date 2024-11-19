@@ -257,7 +257,7 @@
         /* border: 3px solid yellow; */
     }
 
-    .item:nth-child(1) {
+    /* .item:nth-child(1) {
         background-image: url(./images/location/thailand.jpg);
     }
 
@@ -271,7 +271,7 @@
 
     .item:nth-child(4) {
         background-image: url(./images/location/korea.jpg);
-    }
+    } */
 
     /* Control first 2 slide image */
     .slide .item:nth-child(1),
