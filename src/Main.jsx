@@ -19,16 +19,16 @@ function Main() {
             <Link to='/about'>About</Link>
         </nav> */}
         {/* <BrowserRouter>      */}
-            <Routes>    
-                {/* <Route index element={<Homepage />} /> */}
-                <Route path="/" element={<Homepage />} />
-                <Route path="/AboutUs" element={<AboutUs />} />
-                <Route path="/Thailand" element={<Thailand />} />
-                <Route path="/Switzerland" element={<Switzerland />} />
-                <Route path="/Japan" element={<Japan />} />
-                <Route path="/Korea" element={<Korea />} />
-                <Route path="*" element={<Homepage />} />
-            </Routes>
+        <Routes>    
+            {/* <Route index element={<Homepage />} /> */}
+            <Route path="/" element={<Homepage />} />
+            <Route path="/AboutUs" element={<AboutUs />} />
+            <Route path="/Thailand" element={<Thailand />} />
+            <Route path="/Switzerland" element={<Switzerland />} />
+            <Route path="/Japan" element={<Japan />} />
+            <Route path="/Korea" element={<Korea />} />
+            <Route path="*" element={<Homepage />} />
+        </Routes>
         {/* </BrowserRouter>  */}
         </>
     );
