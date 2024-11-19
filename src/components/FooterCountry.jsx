@@ -10,10 +10,10 @@ function FooterCountry() {
       <ul className="footer-links">
         <li><nav><Link to="/" className="footer-link">Home</Link></nav></li>
         <li><nav><Link to="/AboutUs" className="footer-link">About</Link></nav></li>
-        <li><nav><Link to="/japan" className="footer-link">Japan</Link></nav></li>
-        <li><nav><Link to="/korea" className="footer-link">Korea</Link></nav></li>
-        <li><nav><Link to="/switzerland" className="footer-link">Switzerland</Link></nav></li>
-        <li><nav><Link to="/thailand" className="footer-link">Thailand</Link></nav></li>
+        <li><nav><Link to="/Japan" className="footer-link">Japan</Link></nav></li>
+        <li><nav><Link to="/Korea" className="footer-link">Korea</Link></nav></li>
+        <li><nav><Link to="/Switzerland" className="footer-link">Switzerland</Link></nav></li>
+        <li><nav><Link to="/Thailand" className="footer-link">Thailand</Link></nav></li>
       </ul>
       <ul className="footer-icons">
         <li><a href="https://www.facebook.com" className="footer-icon">

@@ -1,15 +1,15 @@
 import React from 'react'
 
-import Nav from './Nav';
+import NavCountry from './NavCountry';
 import HeroAbout from './HeroAbout';
-import Footer from './Footer';
+import FooterCountry from './FooterCountry';
 
 function AboutUs() {
   return (
     <>
-        <Nav />
+        <NavCountry />
         <HeroAbout />
-        <Footer />
+        <FooterCountry />
     </>
   )
 }
