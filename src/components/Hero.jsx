@@ -1,20 +1,19 @@
 import React from 'react'
 
-
 import thailandFlag from "../images/country/thailandFlag.png";
 import switzerlandFlag from "../images/country/switzerlandFlag.webp";
 import japanFlag from "../images/country/japanFlag.png";
 import koreaFlag from "../images/country/koreaFlag.webp";
 
 function Hero() {
+
   return (
         <>
         {/* <!-- container --> */}
         <div className="container">
             {/* <!-- hero slide --> */}
             <div className="slide">
-                {/* <div className="item" style={{'background-image': 'url(./images/location/thailand.jpg)'}}> */}
-                <div className="item" >
+                <div className="item" style={{backgroundImage: 'url(../images/location/thailand.jpg)'}}>
                     <div className="content">
                         <div className="name">Thailand</div>
                         <img src={thailandFlag} alt="logo" className="logo-link" /> 
@@ -24,8 +23,8 @@ function Hero() {
                         <button><a href="./content/thailand.html">Explore</a></button>
                     </div>
                 </div>
-                {/* <div className="item" style={{'background-image': 'url(./images/location/switzerland.jpg)'}}> */}
-                <div className="item" >
+                <div className="item" style={{ backgroundImage: 'url(../src/component/japan.jpg)' }}>
+              
                     <div className="content">
                         <div className="name">Switzerland</div>
                         <img src={switzerlandFlag} alt="logo" className="logo-link" /> 

@@ -1,0 +1,972 @@
+/* =================
+    Global variables
+    ================= */
+    :root {
+        /* Your Theme color */
+        --clr-primary-1: #f4fce9;
+        --clr-primary-2: #e7f8cf;
+        --clr-primary-3: #cff1a5;
+        --clr-primary-4: #afe670;
+        --clr-primary-5: #90d645;
+        --clr-primary-6: #6bb224;
+        --clr-primary-7: #56961a;
+        --clr-primary-8: #437219;
+        --clr-primary-9: #375b19;
+        --clr-primary-10: #314d1a;
+        
+        /* define gray shade */
+        --clr-gray-1: #ededed;
+        --clr-gray-2: #dfdfdf;
+        --clr-gray-3: #c9c9c9;
+        --clr-gray-4: #adadad;
+        --clr-gray-5: #999999;
+        --clr-gray-6: #888888;
+        --clr-gray-7: #7b7b7b;
+        --clr-gray-8: #676767;
+        --clr-gray-9: #545454;
+        --clr-gray-10: #363636;
+        
+        /* others */
+        --clr-white: #fff;
+        --clr-transparent: transparent;
+        --ff-primary: "Roboto", sans-serif;
+        --transition: all 0.3s linear;
+        --transition-slide: all 0.5s ease-in-out;
+
+        --spacing: 0.25rem;
+        --radius: 0.5rem;
+        --light-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        --dark-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+/* =================
+    Global Settings
+    ================= */
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    } 
+    
+    html {
+        /* set the scroll action smoothly */
+        scroll-behavior: smooth;
+    }
+    
+    body {
+        font-family: var(--ff-primary);
+        background-color: var(--clr-white);
+        color: var(--clr-gray-10);
+        line-height: 1.5;
+        font-size: 0.875rem;
+    }
+
+    /* used on nav bar */
+    ul {
+        list-style-type: none;
+        display: flex;
+    }
+
+    /* used on nav bar */
+    a {
+        text-decoration: none;
+    }
+
+/* ================
+    Navbar
+    ================ */
+    .navbar {
+        /* fixed the navbar at the top of the page */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: var(--clr-transparent);
+        /* box-shadow: var(--dark-shadow); */
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 1;
+    }
+
+    .nav-logo {
+        width: 25px;
+        height: 25px;
+        margin-left: 40px;
+        margin-right: 7%;
+        padding-bottom: 40px;
+        transform: scale(0.75, 0.75);
+    }
+ 
+    .nav-links {
+        display: none;
+    }
+
+    .nav-list {
+        display: flex;
+    }
+
+    .nav-link {
+        margin: 10px;
+        text-transform: capitalize;
+        color: var(--clr-primary-6);
+    }
+    
+    .nav-link:hover {
+        color: var(--clr-primary-8);
+    }
+
+    .nav-icons-list {
+        display: flex;
+        margin: 40px;
+    }
+    
+    .nav-icon {
+        font-size: 1.3rem;
+        margin: 5px;
+        color: var(--clr-primary-8);
+    }
+    
+    .nav-icon:hover {
+        color: var(--clr-primary-5);
+    }
+
+    /* Not display Humburger mobile button and mobile link if larger than 768px */
+    @media (min-width: 768px) {
+        .nav-mobile {
+            display: none;
+        }
+    }
+
+    /* Display Humburger mobile button and mobile link if less than 768px */
+    @media (max-width: 768px) {
+        /* Not display nav links */
+        .nav-links {
+            display: none;
+        }
+
+        /* Not display nav icons */
+        .nav-icons {
+            display: none;
+        }
+
+        .nav-mobile {
+            display: block;
+        }
+
+        .nav-sign {
+            margin-right: -52%;
+            margin-left: -49%;
+        }
+
+        /* Humburger mobile button */
+        .nav-mobile-toggle {
+            cursor: pointer;
+            margin: 40px;
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: var(--clr-transparent);
+        }
+        
+        /* Humburger button icon */
+        .fa-bars {
+            font-size: 1.5rem;
+            width: 100%;
+            color: var(--clr-primary-6);
+        }
+
+        .mobile-nav-list {
+            position: fixed;
+            top: 4rem;
+            right: -100%;
+            width: 100%;
+            height: calc(100vh - 4rem);
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            padding-top: 30px;
+            gap: 2rem;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            text-transform: capitalize;
+            /* text-align: center; */
+            /* transform: translateX(100%); */
+        }
+
+        .mobile-nav-list.active {
+            /* transform: translateX(100%); */
+            /* position: fixed; */
+            /* top: 4rem; */
+            /* width: 100%; */
+            /* display: flex; */
+            /* flex-direction: flex-column; */
+            /* flex-direction: column; */
+            /* align-items: center; */
+            /* text-align: center;
+            /* transform: translateX(0); */
+            bottom: 0;
+            right: 0;
+            padding-right: 10%;
+            background: var(--clr-primary-2);
+            opacity: 0.8;
+        }
+
+        .mobile-nav-link:hover {
+            /* display: block; */
+            color: var(--clr-primary-9);       /* font color */
+            background: var(--clr-primary-5);  /* font background color */
+            cursor: pointer;
+        }
+
+    }
+
+/* =================
+    Container Section (slide)
+    ================= */
+
+    /* hero container */
+    .container {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        /* background: #f5f5f5; */
+        box-shadow: 0 30px 50px #dbdbdb;
+        /* border: 3px solid blue; */
+        /* overflow: hidden; */
+    }
+
+    .container .slide .item {
+        position: absolute;
+        box-shadow: 0 30px 50px #505050;
+        background-size: cover;
+        transition: var(--transition-slide);
+        background-position: center;
+        /* width: 10%; */
+        /* height: 20%; */
+        /* top: 50%; */
+        /* transform: translate(270%, 120%); */
+        /* border-radius: 20px; */
+        /* display: inline-block; */
+        /* transition: 1.0s; */
+        /* border: 3px solid yellow; */
+    }
+
+    /* Control first 2 slide image */
+    .slide .item:nth-child(1),
+    .slide .item:nth-child(2) {
+        width: 100%;
+        height: 85%;
+        /* top: 0; */
+        /* left: 0; */
+        /* transform: translate(0, 0); */
+        /* border-radius: 0;  */
+    }
+
+    .slide .item:nth-child(3) {
+        left: 50%;
+        opacity: 0.8;
+        z-index: -1;
+        display: none;
+    }
+
+    .slide .item:nth-child(4) {
+        left: calc(50% + 50px);
+        /* left: calc(50% + 220px); */
+        /* opacity: 0.3; */
+        z-index: -2;
+        display: none;
+    }
+
+    .slide .item:nth-child(5) {
+        left: calc(50% + 100px);
+        /* left: calc(50% + 440px); */
+        /* opacity: 0.3; */
+        z-index: -3;
+        display: none;
+    }
+
+    /* n = 0, 1, 2, 3, etc */
+    .slide .item:nth-child(n + 6) {
+        left: calc(60% + 660px);
+        opacity: 0.8;
+        display: none;
+    }
+
+    /* country message location on the slide */
+    .item .content {
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        max-width: 30%;
+        text-align: left;
+        color: var(--clr-white);
+        transform: translate(0, -40%);  /* transform the message to center of the container */
+        /* font-family: system-ui; */
+        /* left: 100px; */
+        /* width: 300px; */
+        /* display: none; */
+        /* border: 1px solid blue; */
+    }
+
+    .slide .item:nth-child(3) .content,
+    .slide .item:nth-child(4) .content,
+    .slide .item:nth-child(5) .content {
+        display: none;
+    }
+
+    /* country name on the slide */
+    .content .name {
+        font-size: 40px;
+        text-transform: uppercase;
+        font-weight: bold;
+        opacity: 0;
+        animation: animate 1s ease-in-out 1 forwards;
+    }
+
+    /* country flag size */
+    img.logo-link {
+        width: 10%;
+        opacity: 0;
+        animation: animate 1s ease-in-out 0.3s 1 forwards;
+    }
+
+    /* country description on the slide */
+    .content .des {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        opacity: 0;
+        animation: animate 1s ease-in-out 0.6s 1 forwards;
+    }
+
+    /* country button on the slide */
+    .content button {
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        opacity: 0;
+        border-radius: 8px;
+        background-color: var(--clr-primary-5);
+        /* box-shadow: 0 10px 20px yellow; */
+        animation: animate 1s ease-in-out 0.9s 1 forwards;
+    }
+
+    .content button a {
+        color: var(--clr-primary-8);
+    }
+
+    .content button a:active {
+        color: var(--clr-white);
+    }
+
+    @keyframes animate {
+        from{
+            opacity: 0;
+            transform: translate(0, 100px);
+            filter: blur(33px);
+        }
+
+        to{
+            opacity: 1;
+            transform: translate(0);
+            filter: blur(0px);
+        }
+    }
+
+    /* Display message size is refine in mobile size */ 
+    @media (max-width: 768px) {
+        .item .content {
+            max-width: 40%;
+        }
+
+        .content .name {
+            font-size: 22px;
+        }
+
+        img.logo-link {
+            width: 20%;
+        }
+
+        .content .des {
+            font-size: 10px;
+        }
+
+          /* Control first 2 slide image */
+        .slide .item:nth-child(1),
+        .slide .item:nth-child(2) {
+            height: 82%;
+        }    
+    }
+
+/* =================
+    Container Section (button)
+    ================= */
+
+    .button {
+        position: absolute;
+        width: 100%;
+        text-align: center;        
+        bottom: 9%;
+    }
+
+    .button button {
+        width: 40px;
+        height: 35px;
+        border-radius: 8px;
+        cursor: pointer;
+        margin: 0 5px;
+        border: 1px solid var(--clr-gray-10);
+        transition: var(--transition);
+    }
+
+    .button button:hover {
+        background: var(--clr-gray-4);
+        color: var(--clr-white);
+    }
+
+    .button button:active {
+        transform: translateY(2px);
+    }
+
+    /* Display message size is refine in mobile size */ 
+    @media (max-width: 768px) {
+        .button { 
+            bottom: 11%;
+        }
+    }
+
+/* =================
+    Footer
+    ================= */
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background: var(--clr-gray-10);
+        text-align: center;
+        padding-left: 3rem;
+        padding-right: 2rem;
+    }
+
+    .footer-links, 
+    .footer-icons {
+        display: flex;
+        justify-content: center;
+        /* margin-bottom: 1.0rem; */
+        /* flex-wrap: wrap; */
+    }
+
+    .footer-link {
+        color: var(--clr-white);
+        text-transform: capitalize;
+        font-size: 1rem;
+        margin-right: 1rem;
+        letter-spacing: var(--spacing);
+        transition: var(--transition);
+    }
+
+    .footer-link:hover {
+        color: var(--clr-primary-5);
+    }
+
+    .footer-icon {
+        font-size: 2rem;
+        margin-right: 1rem;
+        color: var(--clr-white);
+        transition: var(--transition);
+    }
+
+    .footer-icon:hover {
+        color: var(--clr-primary-5);
+    }
+
+    .copyright {
+        text-transform: capitalize;
+        letter-spacing: var(--spacing);
+        color: var(--clr-white);
+    }
+
+    .copyright span {
+        margin-left: 0.5rem;
+    }
+
+    /* Display footer size is refine */ 
+    @media (max-width: 768px) {
+        .footer-link {           
+            font-size: 0.75rem;
+            display: none;
+        }
+
+        .footer-icon {
+            font-size: 1.5rem;
+        }
+
+        .copyright {
+            font-size: 0.8rem;
+        }
+    }
+
+
+/* =================
+    AboutUs (HTML)
+    ================= */
+
+    #waterHolder {
+        margin-top: 5%;
+    }
+
+    .water {
+        width: 40%;
+        margin-left: 10%;
+    }
+
+    .personal-img {
+        border-radius: 5px;
+    }
+
+    .section-about {
+        margin-top: 0;
+        padding-top: 6%;
+        padding-bottom: 5%;
+        background-color: var(--clr-gray-4);
+    }
+
+    /* Display message size is refine */ 
+    @media (max-width: 768px) {
+        
+        .water {
+            display: none;
+        }
+
+        .section-about {
+            padding-top: 20%;
+            padding-bottom: 80%;
+            background-color: var(--clr-gray-4);
+        }
+
+        .personal-img {
+            width: 10%;
+            height: 20%;
+        }
+
+    }
+
+/* =================
+    Common Section in country page (HTML)
+    ================= */
+
+    .navbar.country {
+        background: var(--clr-gray-3);
+        box-shadow: var(--dark-shadow);
+    }
+
+
+    /* check all country page, switzerland checked */
+    /* .section { 
+        margin-top: 3%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+    } */
+
+    .section-title {
+        display: flex;        
+    }
+
+    /* check all country page, switzerland checked */
+    /* .section-title-1,
+    .section-title-2 {
+        text-align: center;
+        margin-bottom: 2%;
+    } */
+
+    .section-title h3 {
+        text-transform: uppercase;
+        color: var(--clr-primary-9);
+        margin-bottom: 1%;
+    }
+
+    /* check all country page, switzerland checked */
+    /* .section-title-1 img,
+    .section-title-2 img {
+        width: 20%;
+    } */
+    
+    /* check all country page, switzerland checked */
+    /* .section-title-1 {
+        border-right: 2px solid var(--clr-gray-3);
+    } */
+
+    .section-info {
+        width: 100%;
+    }
+
+    .section-content {
+        display: flex;
+        margin-top: 2%;
+        padding-bottom: 1%;
+    }
+
+    .section-content img {
+        width: 15%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .tour-card {
+        width: 40%;
+    }
+
+    .tour-info h4 {
+        margin-bottom: 1%;
+    }
+
+    .tour-info ol {
+        margin-left: 5%;
+    }
+
+    .tour-footer {
+        margin-top: 10px;
+    }
+
+    .tour-footer-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .tour-footer-info li {
+        text-transform: capitalize;
+        color: var(--clr-primary-9);
+        font-size: 0.75rem;
+    }
+
+    .footer-country {
+        position:unset;
+    }
+
+/* =================
+    Switzerland page (HTML)
+    ================= */
+
+    .section-switzerland {
+        margin-top: 3%;
+        padding-top: 1%;
+        background-color: var(--clr-gray-4);
+    }
+
+    .section-switzerland-title-1 {
+        border-right: 2px solid var(--clr-gray-3);
+    }
+
+    .section-switzerland-title-2 {
+        margin-top: 11px;
+    }
+
+    .section-switzerland-title-1,
+    .section-switzerland-title-2 {
+        text-align: center;
+        margin-bottom: 2%;
+    }
+
+    .section-switzerland-title-1 img,
+    .section-switzerland-title-2 img {
+        width: 30%;
+    }
+
+    /* Display message size is refine */ 
+    @media (max-width: 768px) {
+        .section-switzerland {
+            margin-top: 0%;
+            padding-top: 20%;
+        }
+
+        .section-switzerland-title-1 h3 {
+            font-size: 0.8rem;
+        }
+
+        .section-switzerland-title-2 {
+            margin-top: 4%;
+        }
+       
+        .switzerland-img1 {
+            width: 20%;
+            transform: scale(1.5,0.6);
+        }
+
+        .switzerland-img2 {
+            width: 20%;
+            transform: scale(1.5,0.4);
+        }
+
+        .switzerland-img4 {
+            width: 20%;
+            transform: scale(1.5,0.3);
+        }
+
+        .tour-card {
+            width: 50%;
+            font-size: 14px;
+        }
+
+        .tour-info ol {
+            margin-left: 9%;
+        }
+
+        .tour-footer-info li{
+            font-size: 0.6rem;
+        }
+    }
+
+/* =================
+    Korea page (HTML)
+    ================= */
+
+    .section-korea {
+        margin-top: 3%;
+        padding-top: 1%;
+        background-color: var(--clr-gray-4);
+    }
+
+    .section-korea-title-1 {
+        border-right: 2px solid var(--clr-gray-3);
+    }
+
+    .section-korea-title-2 {
+        margin-top: 30px;
+    }
+
+    .section-korea-title-1,
+    .section-korea-title-2 {
+        text-align: center;
+        margin-bottom: 2%;
+    }
+
+    .section-korea-title-1 img,
+    .section-korea-title-2 img {
+        width: 30%;
+    }
+
+    .tour-info.tour-info-korea ol {
+        margin-left: 3%;
+    }
+
+    /* Display message size is refine */ 
+    @media (max-width: 768px) {    
+
+        .section-korea {
+            margin-top: 0%;
+            padding-top: 20%;
+        }
+
+        .section-korea-title-1 h3 {
+            font-size: 0.8rem;
+        }
+
+        .section-korea-title-2 {
+            margin-top: 4%;
+        }
+       
+        .korea-img6 {
+            width: 20%;
+            transform: scale(1.5,0.6);
+        }
+
+        .korea-img5 {
+            width: 20%;
+            transform: scale(1.5,0.4);
+        }
+
+        .korea-img4 {
+            width: 20%;
+            transform: scale(1.5,0.3);
+        }
+
+        .tour-info.tour-info-korea ol {
+            margin-left: 8%;
+        }
+
+        .tour-card {
+            width: 52%;
+            font-size: 14px;
+        }
+
+        .tour-info ol {
+            margin-left: 9%;
+        }
+
+        .tour-footer-info li{
+            font-size: 0.6rem;
+        }
+    }
+/* =================
+    Japan page (HTML)
+    ================= */
+
+    .section-japan {
+        margin-top: 0;
+        padding-top: 6%;
+        background-color: var(--clr-gray-4);
+    }
+
+    .section-japan-title-1 {
+        border-right: 2px solid var(--clr-gray-3);
+    }
+
+    .section-japan-title-2 {
+        margin-top: 0px;
+    }
+
+    .section-japan-title-1,
+    .section-japan-title-2 {
+        text-align: center;
+        margin-bottom: 2%;
+    }
+
+    .section-japan-title-1 img {
+        width: 30%;
+    }
+
+    .section-japan-title-2 img {
+        width: 30%;
+        transform: scale(0.8,0.8);
+    }
+
+    /* .japan_banner {
+        object-fit: contain;
+    } */
+
+    /* Display message size is refine */ 
+    @media (max-width: 768px) {    
+
+        .section-japan {
+            margin-top: 0%;
+            padding-top: 20%;
+        }
+
+        .section-japan-title-1 h3 {
+            font-size: 0.8rem;
+        }
+
+        .section-japan-title-2 {
+            margin-top: 4%;
+        }
+       
+        .japan-img1 {
+            width: 20%;
+            transform: scale(1.5,0.4);
+        }
+
+        .japan-img2 {
+            width: 20%;
+            transform: scale(1.5,0.4);
+        }
+
+        .japan-img3 {
+            width: 20%;
+            transform: scale(1.5,0.4);
+        }
+
+        .tour-card {
+            width: 52%;
+            font-size: 14px;
+        }
+
+        .tour-footer-info li{
+            font-size: 0.6rem;
+        }
+    }
+
+/* =================
+    Thailand page (HTML)
+    ================= */
+
+    .section-thailand {
+        margin-top: 0;
+        padding-top: 6%;
+        background-color: var(--clr-gray-4);
+    }
+
+    .section-thailand-title-1 {
+        padding-left: 12%;
+        border-right: 2px solid var(--clr-gray-3);
+    }
+
+    .section-thailand-title-2 {
+        margin-left: -10%;
+        margin-top: 0px;
+    }
+
+    .section-thailand-title-1,
+    .section-thailand-title-2 {
+        text-align: center;
+        margin-bottom: 2%;
+    }
+
+    .section-thailand-title-1 img {        
+        width: 30%;
+        transform: scale(1, 0.8);
+    }
+
+    .section-thailand-title-2 img {
+        padding-top: 70px;
+        width: 30%;
+        transform: scale(0.8,0.8);
+    }
+
+    /* Display message size is refine */ 
+    @media (max-width: 768px) {    
+
+        .section-thailand {
+            margin-top: 0%;
+            padding-top: 20%;
+        }
+
+        .section-thailand-title-1 {
+            padding-left: 10%;         
+        }
+
+        .section-thailand-title-1 h3 {
+            font-size: 0.8rem;
+        }
+
+        .section-thailand-title-2 {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .section-thailand-title-2 img {
+            padding-top: 30px;
+            margin-bottom: 0;
+        }
+       
+        .thailand-img1 {
+            width: 20%;
+            transform: scale(1.5,0.4);
+        }
+
+        .thailand-img2 {
+            width: 20%;
+            transform: scale(1.5,0.2);
+        }
+
+        .thailand-img3 {
+            width: 20%;
+            transform: scale(1.5,0.3);
+        }
+
+        .tour-card {
+            width: 52%;
+            font-size: 14px;
+        }
+
+        .tour-footer-info li{
+            font-size: 0.6rem;
+        }
+    }
