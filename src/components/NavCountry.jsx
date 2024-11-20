@@ -1,29 +1,22 @@
 import React from "react";
-
 import logo from "../images/favicon.ico";
-import sign2 from "../images/shop_sign2.png";
-
-import { Link } from "react-router-dom";
 // import PageLinks from "./PageLinks";
 // import IconLinks from "./IconLinks";
 // import { useState } from "react";
 
-function Nav() {
+import { Link } from "react-router-dom";
+
+function NavCountry() {
 
     return (
         
         <>
             {/* <!-- nav bar --> */}
-            <nav className="navbar">
+            <nav className="navbar country">
                 <div className="nav-logo">
                     {/* <a href="./index.html"><img src={logo} alt="logo" /></a> */}
                     <nav><Link to="/"><img src={logo} alt="logo" /></Link></nav>
                 </div>  
-
-                <div className="nav-sign">
-                    <img src={sign2} alt="logo" style={{transform: 'scale(0.3)'}} /> 
-                </div>  
-
 
                 {/* <!-- desktop --> */}
                 <div className="nav-links">
@@ -58,9 +51,9 @@ function Nav() {
                 </button>
                 <ul className="mobile-nav-list" id="mobile-nav-list">
                     <li><Link to="/" className="mobile-nav-link">Home</Link></li>
-                    <li><Link to="AboutUs.html" className="mobile-nav-link">about</Link></li>
-                    {/* <li><Link to="japan.html" className="mobile-nav-link">japan</Link></li> */}
-                    {/* <li><Link to="korea.html" className="mobile-nav-link">korea</Link></li> */}
+                    <li><Link to="AboutUs" className="mobile-nav-link">about</Link></li>
+                    {/* <li><Link to="japan.html" className="mobile-nav-link">japan</=></li> */}
+                    {/* <li><Link to="korea.html" className="mobile-nav-link">korea</=></li> */}
                     <li><Link to="Switzerland" className="mobile-nav-link">switzerland</Link></li>
                     <li><Link to="Thailand" className="mobile-nav-link">thailand</Link></li>
                 </ul>
@@ -70,4 +63,4 @@ function Nav() {
     );
 }
 
-export default Nav
+export default NavCountry
