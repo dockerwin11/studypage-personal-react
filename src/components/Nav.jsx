@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect } from 'react';
 
 import logo from "../images/favicon.ico";
 import sign2 from "../images/shop_sign2.png";
+
+import { humBurger } from "../js/humburger";
 
 import { Link } from "react-router-dom";
 // import PageLinks from "./PageLinks";
@@ -9,6 +11,8 @@ import { Link } from "react-router-dom";
 // import { useState } from "react";
 
 function Nav() {
+
+    useEffect(() => {humBurger();}, []);
 
     return (
         
@@ -28,12 +32,12 @@ function Nav() {
                 {/* <!-- desktop --> */}
                 <div className="nav-links">
                     <ul className="nav-list" id="nav-list">
-                        <li><a href="./index.html" className="nav-link">Home</a></li>
-                        <li><a href="./content/aboutUs.html" className="nav-link">About</a></li>
-                        <li><a href="./content/japan.html" className="mobile-nav-link">japan</a></li>
-                        <li><a href="./content/korea.html" className="mobile-nav-link">korea</a></li>
-                        <li><a href="./content/switzerland.html" className="mobile-nav-link">switzerland</a></li>
-                        <li><a href="./content/thailand.html" className="mobile-nav-link">thailand</a></li>
+                        <li><nav><Link to="/" className="nav-link">Home</Link></nav></li>
+                        <li><nav><Link to="/AboutUs" className="nav-link">About</Link></nav></li>
+                        <li><nav><Link to="/Japan" className="mobile-nav-link">japan</Link></nav></li>
+                        <li><nav><Link to="/Korea" className="mobile-nav-link">korea</Link></nav></li>
+                        <li><nav><Link to="/Switzerland" className="mobile-nav-link">switzerland</Link></nav></li>
+                        <li><nav><Link to="/Thailand" className="mobile-nav-link">thailand</Link></nav></li>
                     </ul>
                 </div>  
 
@@ -57,12 +61,12 @@ function Nav() {
                     <i className="fa-solid fa-bars"></i>
                 </button>
                 <ul className="mobile-nav-list" id="mobile-nav-list">
-                    <li><Link to="/" className="mobile-nav-link">Home</Link></li>
-                    <li><Link to="AboutUs.html" className="mobile-nav-link">about</Link></li>
-                    {/* <li><Link to="japan.html" className="mobile-nav-link">japan</Link></li> */}
-                    {/* <li><Link to="korea.html" className="mobile-nav-link">korea</Link></li> */}
-                    <li><Link to="Switzerland" className="mobile-nav-link">switzerland</Link></li>
-                    <li><Link to="Thailand" className="mobile-nav-link">thailand</Link></li>
+                    <li><nav><Link to="/" className="mobile-nav-link">Home</Link></nav></li>
+                    <li><nav><Link to="/AboutUs" className="mobile-nav-link">about</Link></nav></li>
+                    <li><nav><Link to="/japan" className="mobile-nav-link">japan</Link></nav></li>
+                    <li><nav><Link to="/korea" className="mobile-nav-link">korea</Link></nav></li>
+                    <li><nav><Link to="/Switzerland" className="mobile-nav-link">switzerland</Link></nav></li>
+                    <li><nav><Link to="/Thailand" className="mobile-nav-link">thailand</Link></nav></li>
                 </ul>
                 </div>
             </nav>

@@ -26,12 +26,12 @@ function NavCountry() {
                 {/* <!-- desktop --> */}
                 <div className="nav-links">
                     <ul className="nav-list" id="nav-list">
-                        <li><nav><Link to="./index.html" className="nav-link">Home</Link></nav></li>
-                        <li><nav><Link to="./content/aboutUs.html" className="nav-link">About</Link></nav></li>
-                        <li><nav><Link to="./content/japan.html" className="mobile-nav-link">japan</Link></nav></li>
-                        <li><nav><Link to="./content/korea.html" className="mobile-nav-link">korea</Link></nav></li>
-                        <li><nav><Link to="./content/switzerland.html" className="mobile-nav-link">switzerland</Link></nav></li>
-                        <li><nav><Link to="./content/thailand.html" className="mobile-nav-link">thailand</Link></nav></li>
+                        <li><nav><Link to="./" className="nav-link">Home</Link></nav></li>
+                        <li><nav><Link to="./AboutUs" className="nav-link">About</Link></nav></li>
+                        <li><nav><Link to="./Japan" className="mobile-nav-link">japan</Link></nav></li>
+                        <li><nav><Link to="./Korea" className="mobile-nav-link">korea</Link></nav></li>
+                        <li><nav><Link to="./Switzerland" className="mobile-nav-link">switzerland</Link></nav></li>
+                        <li><nav><Link to="./Thailand" className="mobile-nav-link">thailand</Link></nav></li>
                     </ul>
                 </div>  
 
@@ -57,8 +57,8 @@ function NavCountry() {
                 <ul className="mobile-nav-list" id="mobile-nav-list">
                     <li><nav><Link to="/" className="mobile-nav-link">Home</Link></nav></li>
                     <li><nav><Link to="/AboutUs" className="mobile-nav-link">about</Link></nav></li>
-                    <li><nav><Link to="/japan" className="mobile-nav-link">japan</Link></nav></li>
-                    <li><nav><Link to="/korea" className="mobile-nav-link">korea</Link></nav></li>
+                    <li><nav><Link to="/Japan" className="mobile-nav-link">japan</Link></nav></li>
+                    <li><nav><Link to="/Korea" className="mobile-nav-link">korea</Link></nav></li>
                     <li><nav><Link to="/Switzerland" className="mobile-nav-link">switzerland</Link></nav></li>
                     <li><nav><Link to="/Thailand" className="mobile-nav-link">thailand</Link></nav></li>
                 </ul>
