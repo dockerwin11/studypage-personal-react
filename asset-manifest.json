@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.06a81149.css",
-    "main.js": "/static/js/main.7a640074.js",
+    "main.js": "/static/js/main.933ea6fe.js",
     "static/media/korea_img6.png": "/static/media/korea_img6.6af8a325a68ce151520b.png",
     "static/media/korea1.jpg": "/static/media/korea1.899fff7d61400ab3e814.jpg",
     "static/media/thailand_img3.jpg": "/static/media/thailand_img3.f6e258866a27a10eee83.jpg",
@@ -33,10 +33,10 @@
     "index.html": "/index.html",
     "static/media/switzerlandFlag.webp": "/static/media/switzerlandFlag.0aff0c246cf864e6cd5f.webp",
     "main.06a81149.css.map": "/static/css/main.06a81149.css.map",
-    "main.7a640074.js.map": "/static/js/main.7a640074.js.map"
+    "main.933ea6fe.js.map": "/static/js/main.933ea6fe.js.map"
   },
   "entrypoints": [
     "static/css/main.06a81149.css",
-    "static/js/main.7a640074.js"
+    "static/js/main.933ea6fe.js"
   ]
 }
