@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-const MyComponent = () => {
+const WaterCanvasComponent = () => {
   useEffect(() => {
     const script = document.createElement('script');
 
@@ -36,7 +36,7 @@ const MyComponent = () => {
       });
 
       var waterCanvas = new WaterCanvas(width, height, "waterHolder", waterModel, {
-        backgroundImageUrl: "../images/aboutUs.jpg",
+        backgroundImageUrl: "/images/aboutUs.jpg",
         lightRefraction: 9.0,
         lightReflection: 0.1,
         maxFps: 50,
@@ -63,4 +63,4 @@ const MyComponent = () => {
   );
 };
 
-export default MyComponent;
+export default WaterCanvasComponent;

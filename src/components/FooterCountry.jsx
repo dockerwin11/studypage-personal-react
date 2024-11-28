@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+
+import { footerDate } from "../js/footerdate";
 
 import { Link } from "react-router-dom";
 
 function FooterCountry() {
+
+  useEffect(() => {footerDate();}, []);
+
   return (
     <>
     {/* <!-- footer --> */}

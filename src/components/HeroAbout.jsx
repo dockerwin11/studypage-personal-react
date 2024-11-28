@@ -6,7 +6,7 @@ import React from 'react';
 
 import personalFlag from "../images/personal.jpeg";
 
-import MyComponent from './WaterCanvasComponent';
+import WaterCanvasComponent from './WaterCanvasComponent';
 
 
 function HeroAbout() {
@@ -20,7 +20,7 @@ function HeroAbout() {
             {/* <div className="water">
                 <div id="waterHolder"></div>
             </div> */}
-            <MyComponent />
+            <WaterCanvasComponent />
 
             <div className="section-info">
                 <div className="section-content">

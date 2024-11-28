@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useEffect } from 'react';
 import logo from "../images/favicon.ico";
+
+import { humBurger } from "../js/humburger";
+
 // import PageLinks from "./PageLinks";
 // import IconLinks from "./IconLinks";
 // import { useState } from "react";
@@ -7,6 +10,8 @@ import logo from "../images/favicon.ico";
 import { Link } from "react-router-dom";
 
 function NavCountry() {
+
+    useEffect(() => {humBurger();}, []);
 
     return (
         
@@ -21,12 +26,12 @@ function NavCountry() {
                 {/* <!-- desktop --> */}
                 <div className="nav-links">
                     <ul className="nav-list" id="nav-list">
-                        <li><a href="./index.html" className="nav-link">Home</a></li>
-                        <li><a href="./content/aboutUs.html" className="nav-link">About</a></li>
-                        <li><a href="./content/japan.html" className="mobile-nav-link">japan</a></li>
-                        <li><a href="./content/korea.html" className="mobile-nav-link">korea</a></li>
-                        <li><a href="./content/switzerland.html" className="mobile-nav-link">switzerland</a></li>
-                        <li><a href="./content/thailand.html" className="mobile-nav-link">thailand</a></li>
+                        <li><nav><Link to="./index.html" className="nav-link">Home</Link></nav></li>
+                        <li><nav><Link to="./content/aboutUs.html" className="nav-link">About</Link></nav></li>
+                        <li><nav><Link to="./content/japan.html" className="mobile-nav-link">japan</Link></nav></li>
+                        <li><nav><Link to="./content/korea.html" className="mobile-nav-link">korea</Link></nav></li>
+                        <li><nav><Link to="./content/switzerland.html" className="mobile-nav-link">switzerland</Link></nav></li>
+                        <li><nav><Link to="./content/thailand.html" className="mobile-nav-link">thailand</Link></nav></li>
                     </ul>
                 </div>  
 
@@ -50,12 +55,12 @@ function NavCountry() {
                     <i className="fa-solid fa-bars"></i>
                 </button>
                 <ul className="mobile-nav-list" id="mobile-nav-list">
-                    <li><Link to="/" className="mobile-nav-link">Home</Link></li>
-                    <li><Link to="AboutUs" className="mobile-nav-link">about</Link></li>
-                    {/* <li><Link to="japan.html" className="mobile-nav-link">japan</=></li> */}
-                    {/* <li><Link to="korea.html" className="mobile-nav-link">korea</=></li> */}
-                    <li><Link to="Switzerland" className="mobile-nav-link">switzerland</Link></li>
-                    <li><Link to="Thailand" className="mobile-nav-link">thailand</Link></li>
+                    <li><nav><Link to="/" className="mobile-nav-link">Home</Link></nav></li>
+                    <li><nav><Link to="/AboutUs" className="mobile-nav-link">about</Link></nav></li>
+                    <li><nav><Link to="/japan" className="mobile-nav-link">japan</Link></nav></li>
+                    <li><nav><Link to="/korea" className="mobile-nav-link">korea</Link></nav></li>
+                    <li><nav><Link to="/Switzerland" className="mobile-nav-link">switzerland</Link></nav></li>
+                    <li><nav><Link to="/Thailand" className="mobile-nav-link">thailand</Link></nav></li>
                 </ul>
                 </div>
             </nav>
