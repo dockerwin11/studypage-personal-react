@@ -1,10 +1,15 @@
-import React from 'react'
+// import React, { useEffect } from 'react';
+import React from 'react';
+
+// import { WaterCanvas, WaterModel, enableMouseInteraction } from '../js/watercanvas';
+// import { WaterCanvas, WaterModel, enableMouseInteraction, WaterCanvasComponent } from '../js/watercanvas';
 
 import personalFlag from "../images/personal.jpeg";
 
+import MyComponent from './WaterCanvasComponent';
+
 
 function HeroAbout() {
-
 
   return (
     <>
@@ -15,6 +20,7 @@ function HeroAbout() {
             {/* <div className="water">
                 <div id="waterHolder"></div>
             </div> */}
+            <MyComponent />
 
             <div className="section-info">
                 <div className="section-content">
@@ -41,6 +47,7 @@ function HeroAbout() {
         </section>
     </>
   )
+
 }
 
 export default HeroAbout

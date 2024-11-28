@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
+import { slideFunction } from '../js/slide';
 
 import thailandFlag from "../images/country/thailandFlag.png";
 import switzerlandFlag from "../images/country/switzerlandFlag.webp";
@@ -15,6 +16,13 @@ import BackgroundImage4 from '../images/location/korea1.jpg';
 import { Link } from "react-router-dom";
 
 function Hero() {
+    // const style1 = { backgroundImage: "url(./images/location/thailand.jpg)", };
+    // const style2 = { backgroundImage: 'url(./images/location/switzerland.jpg)', };
+    // const style3 = { backgroundImage: 'url(./images/location/japan1.jpg)', };
+    // const style4 = { backgroundImage: 'url(./images/location/korea1.jpg)', };
+
+    useEffect(() => {slideFunction();}, []);
+
   return (
     
     <>
@@ -22,8 +30,7 @@ function Hero() {
         <div className="container">
             {/* <!-- hero slide --> */}
             <div className="slide">
-                {/* <div className="item" style={{'background-image': 'url(./images/location/thailand.jpg)'}}> */}
-                <div className="item" >
+                <div className="item" style={{backgroundImage: `url(${BackgroundImage1})`, }}>
                     <div className="content">
                         <div className="name">Thailand</div>
                         <img src={thailandFlag} alt="logo" className="logo-link" /> 
@@ -34,8 +41,7 @@ function Hero() {
                         <button><nav><Link to="/Thailand">Explore</Link></nav></button>
                     </div>
                 </div>
-                {/* <div className="item" style={{'background-image': 'url(./images/location/switzerland.jpg)'}}> */}
-                <div className="item" >
+                <div className="item" style={{backgroundImage: `url(${BackgroundImage2})`, }}>
                     <div className="content">
                         <div className="name">Switzerland</div>
                         <img src={switzerlandFlag} alt="logo" className="logo-link" /> 
