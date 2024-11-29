@@ -1,12 +1,23 @@
-import React, { useEffect } from 'react';
-
-import { footerDate } from "../js/footerdate";
-
+import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
-function Footer() {
+// 20241129 rewrite
+// import { footerDate } from "../js/footerdate"; 
 
-  useEffect(() => {footerDate();}, []);
+
+function Footer() {
+  
+  // 20241129 rewrite
+  // useEffect(() => {footerDate();}, []);
+
+  // 20241129 added
+  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
+  // 20241129 added 
+
   return (
     <>
     {/* <!-- footer --> */}
@@ -28,7 +39,7 @@ function Footer() {
       </ul>
       <p className="copyright">
         copyright &copy; Go Go ERB Company
-        <span id="date"></span> all right reserved
+        <span id="date">{currentYear}</span> all right reserved
       </p>
     </footer>
     </>

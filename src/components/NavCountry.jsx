@@ -1,17 +1,23 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
+import { Link } from "react-router-dom";
+
 import logo from "../images/favicon.ico";
 
-import { humBurger } from "../js/humburger";
-
-// import PageLinks from "./PageLinks";
-// import IconLinks from "./IconLinks";
-// import { useState } from "react";
-
-import { Link } from "react-router-dom";
+// 20241129 rewrite
+// import { humBurger } from "../js/humburger";
 
 function NavCountry() {
 
-    useEffect(() => {humBurger();}, []);
+    // 20241129 rewrite
+    // useEffect(() => {humBurger();}, []);
+
+    // 20241129 added
+    const [navActive, setNavActive] = useState(false);
+
+    const toggleNav = () => {
+        setNavActive(!navActive);
+    };
+    // 20241129 added
 
     return (
         
@@ -51,17 +57,21 @@ function NavCountry() {
 
                 {/* <!-- mobile hamburger --> */}
                 <div className="nav-mobile">
-                <button type="button" className="nav-mobile-toggle" id="nav-mobile-toggle">
-                    <i className="fa-solid fa-bars"></i>
-                </button>
-                <ul className="mobile-nav-list" id="mobile-nav-list">
-                    <li><nav><Link to="/" className="mobile-nav-link">Home</Link></nav></li>
-                    <li><nav><Link to="/AboutUs" className="mobile-nav-link">about</Link></nav></li>
-                    <li><nav><Link to="/Japan" className="mobile-nav-link">japan</Link></nav></li>
-                    <li><nav><Link to="/Korea" className="mobile-nav-link">korea</Link></nav></li>
-                    <li><nav><Link to="/Switzerland" className="mobile-nav-link">switzerland</Link></nav></li>
-                    <li><nav><Link to="/Thailand" className="mobile-nav-link">thailand</Link></nav></li>
-                </ul>
+                    {/* 20241129 rewrite */}
+                    {/* <button type="button" className="nav-mobile-toggle" id="nav-mobile-toggle"> */}
+                    <button type="button" className="nav-mobile-toggle" id="nav-mobile-toggle" onClick={toggleNav}>
+                        <i className="fa-solid fa-bars"></i>
+                    </button>
+                    {/* 20241129 rewrite */}
+                    {/* <ul className="mobile-nav-list" id="mobile-nav-list"> */}
+                    <ul className={navActive ? 'mobile-nav-list active' : 'mobile-nav-list'} id="mobile-nav-list">
+                        <li><nav><Link to="/" className="mobile-nav-link">Home</Link></nav></li>
+                        <li><nav><Link to="/AboutUs" className="mobile-nav-link">about</Link></nav></li>
+                        <li><nav><Link to="/Japan" className="mobile-nav-link">japan</Link></nav></li>
+                        <li><nav><Link to="/Korea" className="mobile-nav-link">korea</Link></nav></li>
+                        <li><nav><Link to="/Switzerland" className="mobile-nav-link">switzerland</Link></nav></li>
+                        <li><nav><Link to="/Thailand" className="mobile-nav-link">thailand</Link></nav></li>
+                    </ul>
                 </div>
             </nav>
         </>
